@@ -1,1 +1,8 @@
-<h1>Index</h1>
+<h1>All Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+<div>
+    <%= recipe.name %>
+</div>
+<%end %>
+<%= link_to "Add a new recipe", new_recipe_path %>
