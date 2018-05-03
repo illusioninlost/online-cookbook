@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_143223) do
   end
 
   create_table "recipes", force: :cascade do |t|
+    t.string "name"
     t.string "creator"
     t.string "notes"
     t.string "special_tools"
