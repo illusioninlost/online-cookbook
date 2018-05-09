@@ -9,9 +9,9 @@
     <%= recipe.approximate_time %> minutes
     </p>
     <p>
-    <%= recipe.creator %>
-    </p>
-    star ratings
+    Posted by: <%= recipe.creator %>
+  </p><br>
+    <%# star ratings, optional picture %>
 </div>
 <%end %>
 <%= link_to "Add a new recipe", new_recipe_path %>
