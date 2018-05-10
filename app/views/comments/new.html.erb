@@ -1,1 +1,22 @@
 <h1>New comment</h1>
+
+
+<% form_for ([@recipe, @recipe.comments]) do |f| %>
+
+<p>
+<%= f.label :name %>
+<%= f.text_field :name, placeholder: "ex.Bob Smith"%>
+</p>
+<p>
+<%= f.label :content %>
+<%= f.text_area :content, placeholder: "ex. Great recipe!"%>
+</p>
+<p>
+<%= f.label :ratings %>
+<%= f.text_field :ratings, placeholder: "1(worst)-5(best)"%>
+</p>
+
+<%= f.submit %>
+
+
+<% end %>
