@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'recipes#index'
 
   get 'more' => 'abouts#more'
+
   resources :recipes
 end

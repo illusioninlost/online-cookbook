@@ -10,8 +10,12 @@
     </p>
     <p>
     Posted by: <%= recipe.creator %>
-  </p><%= link_to "edit", edit_recipe_path(recipe) %><br>
+  </p><%= link_to "edit", edit_recipe_path(recipe) %>
+  <%= link_to "delete", recipe, :method => :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "more info", recipe_path(recipe) %><br>
     <%# star ratings, optional picture %>
 </div>
 <%end %>
-<%= link_to "Add a new recipe", new_recipe_path %>
+<br>
+<br>
+<%= link_to "Add your own recipe", new_recipe_path %>
