@@ -13,6 +13,13 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
+  def edit
+    @recipe = Recipe.find_by(id: params[:id])
+  end
+
+  def show
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(

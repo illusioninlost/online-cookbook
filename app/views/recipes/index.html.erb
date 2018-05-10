@@ -10,7 +10,7 @@
     </p>
     <p>
     Posted by: <%= recipe.creator %>
-  </p><br>
+  </p><%= link_to "edit", edit_recipe_path(recipe) %><br>
     <%# star ratings, optional picture %>
 </div>
 <%end %>

@@ -1,0 +1,39 @@
+<h1>Editing page</h1>
+
+<%= form_for @recipe do |f| %>
+
+<p>
+<%= f.label :name %>
+<%= f.text_field :name, placeholder: "Your recipe"%>
+</p>
+
+<p>
+<%= f.label :creator %>
+<%= f.text_field :creator, placeholder: "Your name."%>
+</p>
+
+<p>
+<%= f.label :notes %>
+<%= f.text_area :notes, placeholder: "Any messages/summary you want to say"%>
+</p>
+
+<p>
+<%= f.label :special_tools %>
+<%= f.text_area :special_tools, placeholder: "Any equipment needed"%>
+</p>
+
+<p>
+<%= f.label :approximate_time %>
+<%= f.text_field :approximate_time, placeholder: " Time in minutes."%>
+</p>
+
+<p>
+<%= f.label :ingredients %>
+<%= f.text_area :ingredients, placeholder: "List ingredients"%>
+</p>
+
+<p>
+<%= f.submit %>
+</p>
+
+<% end %>
