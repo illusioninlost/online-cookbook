@@ -1,1 +1,23 @@
-<h1>Show path</h1>
+<div class="">
+  <h1>The recipe</h1>
+</div>
+
+<div class="">
+  <%= @recipe.name %><br>
+  <%= @recipe.creator %><br>
+  <%= @recipe.notes %><br>
+  <%= @recipe.special_tools %><br>
+  <%= @recipe.approximate_time %><br>
+  <%= @recipe.ingredients %><br>
+  <%= @recipe.created_at.strftime("Created at: %B %d, %Y") %><br>
+</div>
+<br>
+<br>
+<h2>Comments</h2>
+<div class="">
+
+</div>
+
+<div class="">
+  <%= link_to 'Back', recipes_path %>
+</div>
