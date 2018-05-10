@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_04_30_143223) do
 
   create_table "comments", force: :cascade do |t|
+    t.string "name"
     t.string "content"
     t.integer "ratings"
     t.datetime "created_at", null: false
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_143223) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "password_confirmation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
