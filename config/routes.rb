@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get 'more' => 'abouts#more'
 
   resources :recipes do
-    resources :comments, only: [:new, :create, :edit, :update, :destroy]
+    resources :comments
   end
 end
