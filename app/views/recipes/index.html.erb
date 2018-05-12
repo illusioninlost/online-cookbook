@@ -1,4 +1,13 @@
-<h1>All Recipes</h1>
+<div id="head">
+  <ul>
+    <li>
+    <strong>All recipes</strong></li>
+    <li>
+    <%= link_to "Log in", login_path %></li>
+    <li>
+    <%= link_to "Sign up", new_user_path %></</li>
+  </ul>
+<div>
 
 <% @recipes.each do |recipe| %>
 <div>

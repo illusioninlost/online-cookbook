@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'recipes#index'
 
-  get 'more' => 'abouts#more'
-
+  get '/login', to: 'users#login', as: 'login'
+  resources :users, only: [:new,:create,:destroy]
   resources :recipes do
     resources :comments
   end
 
-  resources :users
+
+
+
 end
