@@ -8,3 +8,7 @@ footer {
     color: black;
     text-align: center;
 }
+
+footer:hover{
+  visibility: hidden;
+}

@@ -8,6 +8,8 @@
     <%= link_to "Sign up", new_user_path %></</li>
   </ul>
 <div>
+<hr>
+
 
 <% @recipes.each do |recipe| %>
 <div>
@@ -27,4 +29,5 @@
 <%end %>
 <br>
 <br>
+<hr>
 <%= link_to "Add your own recipe", new_recipe_path %>
