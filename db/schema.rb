@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_143223) do
     t.string "name"
     t.string "content"
     t.integer "ratings"
+    t.integer "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

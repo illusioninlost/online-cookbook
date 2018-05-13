@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   def create
     recipe = Recipe.find_by(id: params[:recipe_id])
     comment = recipe.comments.create(comments_params)
-    redirect_to recipe_path(@recipe)
+    redirect_to recipe_path(recipe)
   end
 
 
