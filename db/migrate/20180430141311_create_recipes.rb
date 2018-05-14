@@ -7,6 +7,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :special_tools
       t.integer :approximate_time
       t.string :ingredients
+      t.integer :user_id
 
       t.timestamps
     end

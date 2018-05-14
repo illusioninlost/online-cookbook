@@ -15,9 +15,18 @@
 <br>
 <h2>Comments</h2>
 <div class="">
+    <% @recipe.comments.each do |comment| %>
+    <p>
+      <%= comment.content %>
+    </p>
+    <p>
+      <%= comment.name %>
+    </p>
 
+  <% end %>
 </div>
 <%= link_to "Add comment", new_recipe_comment_path(@recipe) %>
+
 <div class="">
   <br>
   <br>
