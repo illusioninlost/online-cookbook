@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if (@user = User.create(user_params))
+    if (@user = User.create(user_params)).valid?
     @user.save
     session[:user_id]=@user.id
     redirect_to recipes_path
@@ -38,7 +38,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(
       :username,
-      :password
+      :password,
+      :password_confirmation
       )
     end
 end
