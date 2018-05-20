@@ -9,4 +9,6 @@ class Recipe < ApplicationRecord
   validates :ingredients, presence: true
 
 
+
+
 end
