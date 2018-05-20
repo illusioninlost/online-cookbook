@@ -7,4 +7,6 @@ class Recipe < ApplicationRecord
   validates :special_tools, presence: true
   validates :approximate_time, presence: true, numericality: true, inclusion: { in: 1..999 }
   validates :ingredients, presence: true
+
+
 end

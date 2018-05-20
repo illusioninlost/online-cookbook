@@ -11,6 +11,10 @@
   <%= @recipe.ingredients %><br>
   <%= @recipe.created_at.strftime("Created at: %B %d, %Y") %><br>
 </div>
+
+<h3>Ratings: <%=@sum%>
+out 5 &#9733;</h3>
+
 <br>
 <br>
 <h2>Comments</h2>
@@ -31,4 +35,8 @@
   <br>
   <br>
   <%= link_to 'Back', recipes_path %>
+</div>
+
+<div class="">
+  <%= link_to 'Logout', logout_path %>
 </div>

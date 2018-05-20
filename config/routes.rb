@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root 'recipes#index'
   get '/login', to: 'users#login', as: 'login'
   post '/login', to: 'users#in', as: 'in'
+  get '/logout', to: 'users#destroy', as: 'logout'
   resources :users, only: [:new,:create,:destroy]
   resources :recipes do
     resources :comments
   end
-
 
 end

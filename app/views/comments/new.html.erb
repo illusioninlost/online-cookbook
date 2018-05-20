@@ -22,15 +22,15 @@
 <%= f.text_field :name, placeholder: "ex. Bob Smith"%>
 </p>
 <p>
-<%= f.label :content %>
+<%= f.label :content, "Message"%>
 <%= f.text_area :content, placeholder: "ex. Great recipe!"%>
 </p>
 <p>
-<%= f.label :ratings %>
-<%= f.text_field :ratings, placeholder: "1(worst)-5(best)"%>
+<%= f.label :ratings, "I rate this recipe: " %>
+<%= f.text_field :ratings, placeholder: "1-5"%> out of 5(best) &#9733;
 </p>
 
-<%= f.submit %>
+<%= f.submit "Submit" %>
 
 
 <% end %>
