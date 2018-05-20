@@ -1,5 +1,19 @@
 <h1>New comment</h1>
 
+<% if @comment.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@comment.errors.count, "error") %>
+      prohibited this comment:
+    </h2>
+
+    <ul>
+    <% @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_for ([@recipe, @comment]) do |f| %>
 

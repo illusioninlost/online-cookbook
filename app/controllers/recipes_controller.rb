@@ -9,9 +9,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.create(recipe_params)
-
-    redirect_to recipes_path
+    if (@recipe = Recipe.create(recipe_params)).valid?
+      @recipe.save
+      redirect_to recipes_path
+    else
+      render 'new'
+    end
   end
 
   def edit
