@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
  end
 
  private
-   def verify_or_home?
+   def verify?
      redirect_to root_path unless logged_in?
    end
 
