@@ -9,8 +9,9 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @current_user = User.find(session[:user_id]) if session[:user_id]
     @recipe = Recipe.new
-
+    redirect_to root_path if @current_user == nil
   end
 
   def create
@@ -24,18 +25,22 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+    redirect_to root_path if @current_user == nil
     @recipe = Recipe.find_by(id: params[:id])
   end
 
   def update
-    recipe = Recipe.find_by(id: params[:id])
-    recipe.update(recipe_params)
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+    redirect_to root_path if @current_user == nil
+    @current_user.recipes.find(params[:id]).update(recipe_params)
     redirect_to recipes_path
   end
 
   def destroy
-    recipe = Recipe.find_by(id: params[:id])
-    recipe.destroy
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+    redirect_to root_path if @current_user == nil
+    @current_user.recipes.find(params[:id]).destroy
     redirect_to recipes_path
   end
 
