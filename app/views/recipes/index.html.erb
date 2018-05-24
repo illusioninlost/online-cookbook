@@ -8,11 +8,13 @@
     <li>
     <%= link_to "Sign up", new_user_path %></</li>
   </ul>
-  <p>
-    <%= @current_user.username if @current_user %>
-</p>
 <div>
 <hr>
+
+
+<p>
+  <%= @current_user.username if @current_user %>
+</p>
 <p>
 <%= @message if @message %>
 </p>
@@ -33,9 +35,11 @@
     <%# star ratings, optional picture %>
 </div>
 <%end %>
+
 <br>
 <br>
 <hr>
+
 <%= link_to "Add your own recipe", new_recipe_path %>
 
 <div class="">
