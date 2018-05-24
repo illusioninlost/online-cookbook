@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#in', as: 'in'
   get '/logout', to: 'users#destroy', as: 'logout'
   get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/github/callback', to: 'sessions#create'
   resources :users, only: [:new,:create,:destroy]
   resources :recipes do
     resources :comments
