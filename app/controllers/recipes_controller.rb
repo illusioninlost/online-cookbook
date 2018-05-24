@@ -9,15 +9,13 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @current_user = User.find(session[:user_id]) if session[:user_id]
     @recipe = Recipe.new
-    redirect_to root_path if @current_user == nil
+
   end
 
   def create
     @current_user = User.find(session[:user_id]) if session[:user_id]
-    if (@recipe = Recipe.create(recipe_params)).valid?
-      @recipe.save
+    if (@recipe = Recipe.new(recipe_params)).valid?
       @current_user.recipes.create(recipe_params)
       redirect_to recipes_path
     else
