@@ -8,9 +8,14 @@
     <li>
     <%= link_to "Sign up", new_user_path %></</li>
   </ul>
+  <p>
+    <%= @current_user.username if @current_user %>
+</p>
 <div>
 <hr>
-
+<p>
+<%= @message if @message %>
+</p>
 
 <% @recipes.each do |recipe| %>
 <div>

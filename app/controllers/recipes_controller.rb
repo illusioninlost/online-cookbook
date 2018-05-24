@@ -1,17 +1,24 @@
-
 class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+    if @current_user == nil
+      @message = "Log in or sign up to add your own recipe"
+    end
   end
 
   def new
+    @current_user = User.find(session[:user_id]) if session[:user_id]
     @recipe = Recipe.new
+    redirect_to root_path if @current_user == nil
   end
 
   def create
+    @current_user = User.find(session[:user_id]) if session[:user_id]
     if (@recipe = Recipe.create(recipe_params)).valid?
       @recipe.save
+      @current_user.recipes.create(recipe_params)
       redirect_to recipes_path
     else
       render 'new'
@@ -41,7 +48,6 @@ class RecipesController < ApplicationController
     else
       @sum = @recipe.comments.average(:ratings).round(2)
     end
-
   end
 
   private

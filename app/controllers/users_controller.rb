@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if (@user = User.create(user_params)).valid?
     @user.save
     session[:user_id]=@user.id
-    redirect_to recipes_path
+    redirect_to recipes_path(@user)
   else
     render 'new'
     end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.find_by(:username => params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id]=@user.id
-      redirect_to recipes_path
+      redirect_to recipes_path(@user)
     else
       render 'login'
     end
