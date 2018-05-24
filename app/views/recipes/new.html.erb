@@ -31,12 +31,12 @@
 
 <p>
 <%= f.label :notes %>
-<%= f.text_area :notes, placeholder: "Any messages/summary you want to say"%>
+<%= f.text_area :notes, placeholder: "Directions and Summary"%>
 </p>
 
 <p>
-<%= f.label :special_tools %>
-<%= f.text_field :special_tools, placeholder: "Any equipment needed"%>
+<%= f.label :special_tools, "Tools" %>
+<%= f.text_field :special_tools, placeholder: "List equipment"%>
 </p>
 
 <p>
@@ -50,7 +50,7 @@
 </p>
 
 <p>
-<%= f.submit %>
+<%= f.submit "Submit" %>
 </p>
 
 <% end %>

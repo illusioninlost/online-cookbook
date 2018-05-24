@@ -1,11 +1,18 @@
-  <h1><%= @recipe.name %></h1><br>
+  <div class="">
+    <h1><%= @recipe.name %></h1><br>
+  </div>
+<br>
+  <div class="">
+    <%= @recipe.approximate_time %><span> minutes</span><br>
+    <%= @recipe.created_at.strftime("Posted at: %B %d, %Y") %><br>
+    -<%= @recipe.creator %><br>
+  </div>
+
+<br>
 <div class="">
-  <%= @recipe.creator %><br>
   <%= @recipe.notes %><br>
   <%= @recipe.special_tools %><br>
-  <%= @recipe.approximate_time %><span> minutes</span><br>
   <%= @recipe.ingredients %><br>
-  <%= @recipe.created_at.strftime("Posted at: %B %d, %Y") %><br>
 </div>
 
 <h3>Ratings: <%=@sum%>
@@ -20,9 +27,6 @@ out 5 &#9733;</h3>
       <strong><%= comment.content %></strong><br>
       - <%= comment.name %>
     </p>
-    <p>
-    </p>
-
   <% end %>
 </div>
 <%= link_to "Add comment", new_recipe_comment_path(@recipe) %>

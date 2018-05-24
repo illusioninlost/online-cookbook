@@ -3,7 +3,7 @@
 <%= form_for @recipe do |f| %>
 
 <p>
-<%= f.label :name, "Recipe name" %>
+<%= f.label :name %>
 <%= f.text_field :name, placeholder: "Your recipe"%>
 </p>
 
@@ -13,13 +13,13 @@
 </p>
 
 <p>
-<%= f.label :notes, "Description"%>
-<%= f.text_area :notes, placeholder: "Any messages/summary you want to say"%>
+<%= f.label :notes %>
+<%= f.text_area :notes, placeholder: "Directions and Summary"%>
 </p>
 
 <p>
-<%= f.label :special_tools %>
-<%= f.text_area :special_tools, placeholder: "Any equipment needed"%>
+<%= f.label :special_tools, "Tools" %>
+<%= f.text_field :special_tools, placeholder: "List equipment"%>
 </p>
 
 <p>
@@ -29,11 +29,11 @@
 
 <p>
 <%= f.label :ingredients %>
-<%= f.text_area :ingredients, placeholder: "ex. 1 whole chicken"%>
+<%= f.text_area :ingredients, placeholder: "List ingredients"%>
 </p>
 
 <p>
-<%= f.submit "Submit"%>
+<%= f.submit "Submit" %>
 </p>
 
 <% end %>
