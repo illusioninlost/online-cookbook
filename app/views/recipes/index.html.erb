@@ -1,22 +1,26 @@
+<nav>
 <div id="head">
-  <ul>
-    <li>
+  <ul id="empty">
+    <li class = "title horizontal" id = "left">
     <strong>All recipes</strong>
     </li>
-    <li>
-    <%= link_to "Log in", login_path %></li>
-    <li>
+    <li class = "horizontal" id ="right">
+    <%= link_to "Log in", login_path %></li><br>
+    <li class = "horizontal" id ="right">
     <%= link_to "Sign up", new_user_path %></</li>
   </ul>
 <div>
+</nav>
+<br>
+
 <hr>
 
 
-<p>
+<p class="red">
   <%= @say_hi if @current_user%>
   <%= @current_user.username if @current_user %>
 </p>
-<p>
+<p class="red">
 <%= @message if @message %>
 </p>
 <hr>
@@ -43,7 +47,9 @@
 <hr>
 
 <%= link_to "Add your own recipe", new_recipe_path %>
+<br>
+<br>
 
-<div class="">
+<div >
   <button><%= link_to 'Logout', logout_path %></button>
 </div>
