@@ -33,23 +33,25 @@ class RecipesController < ApplicationController
 
   def update
     @current_user = User.find(session[:user_id]) if session[:user_id]
-    redirect_to root_path if @current_user == nil
-    if @current_user.recipes.find_by(id: params[:id]) == nil
-    redirect_to root_path
+    if @current_user == nil
+      redirect_to root_path
+    elsif @current_user.recipes.find_by(id: params[:id]) == nil
+      redirect_to root_path
     else
-    @current_user.recipes.find_by(id: params[:id]).update(recipe_params)
-    redirect_to recipes_path
+      @current_user.recipes.find_by(id: params[:id]).update(recipe_params)
+      redirect_to recipes_path
     end
   end
 
   def destroy
     @current_user = User.find(session[:user_id]) if session[:user_id]
-    redirect_to root_path if @current_user == nil
-    if @current_user.recipes.find_by(id: params[:id]) == nil
-    redirect_to root_path
+    if @current_user == nil
+      redirect_to root_path
+    elsif @current_user.recipes.find_by(id: params[:id]) == nil
+      redirect_to root_path
     else
-    @current_user.recipes.find_by(id: params[:id]).destroy
-    redirect_to recipes_path
+      @current_user.recipes.find_by(id: params[:id]).destroy
+      redirect_to recipes_path
     end
   end
 
