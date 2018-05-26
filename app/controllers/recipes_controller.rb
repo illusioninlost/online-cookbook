@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @current_user = User.find(session[:user_id]) if session[:user_id]
+    @say_hi = "Hi "
     if @current_user == nil
       @message = "Log in or sign up to add your own recipe"
     end
@@ -33,15 +34,23 @@ class RecipesController < ApplicationController
   def update
     @current_user = User.find(session[:user_id]) if session[:user_id]
     redirect_to root_path if @current_user == nil
-    @current_user.recipes.find(params[:id]).update(recipe_params)
+    if @current_user.recipes.find_by(id: params[:id]) == nil
+    redirect_to root_path
+    else
+    @current_user.recipes.find_by(id: params[:id]).update(recipe_params)
     redirect_to recipes_path
+    end
   end
 
   def destroy
     @current_user = User.find(session[:user_id]) if session[:user_id]
     redirect_to root_path if @current_user == nil
-    @current_user.recipes.find(params[:id]).destroy
+    if @current_user.recipes.find_by(id: params[:id]) == nil
+    redirect_to root_path
+    else
+    @current_user.recipes.find_by(id: params[:id]).destroy
     redirect_to recipes_path
+    end
   end
 
   def show
