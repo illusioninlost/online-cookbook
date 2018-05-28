@@ -26,16 +26,16 @@
 <hr>
 
 <% @recipes.each do |recipe| %>
-<div>
-    <p>
+<div class="structured">
+    <p class= "name">
     <%= recipe.name %>
     </p>
-    <p>
+    <p class = "small">
     <%= recipe.approximate_time %> minutes
     </p>
-    <p>
+    <p class = "small">
     Posted by: <%= recipe.creator %>
-  </p><button><%= link_to "edit", edit_recipe_path(recipe) %></button>
+  </p><button ><%= link_to "edit", edit_recipe_path(recipe) %></button>
   <button><%= link_to "delete", recipe, :method => :delete, data: { confirm: 'Are you sure?' } %></button>
   <button><%= link_to "more info", recipe_path(recipe) %><br></button>
     <%# star ratings, optional picture %>

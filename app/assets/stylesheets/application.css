@@ -68,3 +68,23 @@ li a {
 .title{
   font-size: 36px;
 }
+
+/* columns*/
+div.structured{
+  width:30%;
+  display: inline-block;
+}
+
+button a{
+  text-decoration:none;
+}
+/* inside columns */
+p.name{
+  font-family: serif;
+  font-size: 1.25em;
+  color: rgb(0, 153, 0);
+}
+
+p.small{
+  font-size: 0.75em;
+}
