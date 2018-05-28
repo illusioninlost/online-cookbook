@@ -1,31 +1,37 @@
-  <div class="">
+  <div class="center big">
     <h1><%= @recipe.name %></h1><br>
   </div>
-<br>
-  <div class="">
-    <%= @recipe.approximate_time %><span> minutes</span><br>
-    <%= @recipe.created_at.strftime("Posted at: %B %d, %Y") %><br>
-    -<%= @recipe.creator %><br>
+
+  <div class="center">
+    <%= @recipe.approximate_time %><span> minutes to complete</span><br>
+    <%= @recipe.created_at.strftime("Posted at: %B %d, %Y") %>-<%= @recipe.creator %>
+    <br>
+
   </div>
 
 <br>
-<div class="">
-  <%= @recipe.notes %><br>
-  <%= @recipe.special_tools %><br>
-  <%= @recipe.ingredients %><br>
+<div class="center about">
+  Summary: <%= @recipe.notes %><br>
+  Tools: <%= @recipe.special_tools %><br>
+  Ingredients: <%= @recipe.ingredients %><br>
 </div>
 
-<h3>Ratings: <%=@sum%>
-out 5 &#9733;</h3>
+<div class="center">
+  <h3>Ratings: <%=@sum%>
+  out 5 &#9733;</h3>
+</div>
+
 
 <br>
 <br>
-<h2>Comments</h2>
-<div class="">
+<h3>Comments</h3>
+<div class="salmander">
     <% @recipe.comments.each do |comment| %>
     <p>
       <strong><%= comment.content %></strong><br>
-      - <%= comment.name %>
+      &nbsp;
+      &nbsp;
+       - <%= comment.name %>
     </p>
   <% end %>
 </div>

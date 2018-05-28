@@ -88,3 +88,22 @@ p.name{
 p.small{
   font-size: 0.75em;
 }
+
+/* more info pages */
+
+div.center{
+  text-align: center;
+}
+
+div.big{
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+div.about{
+  font-size: 1.25em;
+}
+
+div.salmander{
+  color:rgb(204, 153, 0);
+}
