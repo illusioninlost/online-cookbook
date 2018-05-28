@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-
+    session.delete("user_id") if session[:user_id]
     @user=User.find_or_create_by(uid: auth['uid']) do |u|
       u.username = auth['info']['nickname']
       u.password = auth['info']['name']
