@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find_by(id: params[:recipe_id])
     if (@comment = @recipe.comments.create(comments_params)).valid?
       @comment.save
-    redirect_to recipe_path(@recipe, @comment)
+    redirect_to recipe_path(@recipe)
     else
       render 'new'
     end
