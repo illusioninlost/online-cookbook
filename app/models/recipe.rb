@@ -9,6 +9,10 @@ class Recipe < ApplicationRecord
   validates :ingredients, presence: true
 
 
+  def self.average_ratings
+    @recipe=Recipe.find_by(id: params[:id])
+    binding.pry
+  end
 
 
 end
