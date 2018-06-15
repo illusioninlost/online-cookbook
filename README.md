@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+If you would like to use this cooking app, you can find this app at "https://github.com/illusioninlost/online-cookbook". In the terminal, run "git clone" + with the copied version. Then, run "bundle install" and "rake db:migrate RAILS_ENV=development". You can open the server "rails s" and then use it to your enjoyment. Enjoy.
