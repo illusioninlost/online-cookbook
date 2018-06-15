@@ -238,6 +238,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-github
+  pry
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.0)

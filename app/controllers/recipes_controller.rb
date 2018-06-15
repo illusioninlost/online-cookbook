@@ -1,3 +1,5 @@
+require 'pry'
+
 class RecipesController < ApplicationController
 
   def index
@@ -58,11 +60,14 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find_by(id: params[:id])
-    if @recipe.comments.empty?
-      @sum = 5
-    else
-      @sum = @recipe.comments.average(:ratings).round(2)
-    end
+    @sum = Recipe.average_ratings(@recipe)
+  
+    #if @recipe.comments.empty?
+    #   @sum = 5
+    # else
+    #   @sum = @recipe.comments.average(:ratings).round(2)
+    # end
+    # 
   end
 
   private

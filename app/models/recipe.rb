@@ -1,3 +1,5 @@
+require 'pry'
+
 class Recipe < ApplicationRecord
   belongs_to :user, optional: true
   has_many :comments
@@ -9,9 +11,12 @@ class Recipe < ApplicationRecord
   validates :ingredients, presence: true
 
 
-  def self.average_ratings
-    @recipe=Recipe.find_by(id: params[:id])
-    binding.pry
+  def self.average_ratings(recipe)
+    if recipe.comments.empty?
+     5
+    else
+    recipe.comments.average(:ratings).round(2)
+    end
   end
 
 
