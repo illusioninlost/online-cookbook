@@ -3,7 +3,6 @@ require 'pry'
 class RecipesController < ApplicationController
 
   def index
-
     @recipes = Recipe.all
     @current_user = User.find(session[:user_id]) if session[:user_id]
     @say_hi = "Hi "

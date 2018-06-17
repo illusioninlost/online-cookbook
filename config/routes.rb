@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'users#destroy', as: 'logout'
   get '/auth/facebook/callback', to: 'sessions#create'
   get '/auth/github/callback', to: 'sessions#create'
+  get '/personal', to: 'users#personal'
   resources :users, only: [:new,:create,:destroy]
   resources :recipes do
     resources :comments
