@@ -5,9 +5,9 @@
 <h2>Your recipes:</h2>
 
 <% @recipes.each do |recipe| %>
-    <h4><%= recipe.name %><br/>
+    <h4><%= recipe.name.capitalize %><br/>
         All ratings:<% Recipe.find(recipe.id).comments.select('ratings').each do |comment|%>
-        <%=comment.ratings%>
+            <%=comment.ratings%>,
         <% end %>
         <br/>
     </h4>

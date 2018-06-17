@@ -28,7 +28,7 @@
 <% @recipes.each do |recipe| %>
 <div class="structured">
     <p class= "name">
-    <%= recipe.name %>
+    <%= recipe.name.capitalize %>
     </p>
     <p class = "small">
     <%= recipe.approximate_time %> minutes
