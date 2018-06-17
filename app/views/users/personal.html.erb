@@ -2,11 +2,16 @@
 <br/>
 <br/>
 
-<h3>Your recipes:</h3>
+<h2>Your recipes:</h2>
 <% @recipes.each do |recipe| %>
-    <%= recipe.name %><br/>
-    <h5>All ratings:<%= Recipe.find(recipe.id).comments.select('ratings').ratings%></h5><br/>
+    <h4><%= recipe.name %></h4><br/>
+    <h5>All ratings:<%= Recipe.find(recipe.id).comments.select('ratings').each do |comment|%>
+        <%=comment.ratings%>
+        <% end %>
+        <br/>
+    </h5>
  <%end%>
+
 
 
 
