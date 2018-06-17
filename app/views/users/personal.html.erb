@@ -1,15 +1,16 @@
 <h1> Recipes and Ratings </h1>
 <br/>
 <br/>
-
+<hr/>
 <h2>Your recipes:</h2>
+
 <% @recipes.each do |recipe| %>
-    <h4><%= recipe.name %></h4><br/>
-    <h5>All ratings:<%= Recipe.find(recipe.id).comments.select('ratings').each do |comment|%>
+    <h4><%= recipe.name %><br/>
+        All ratings:<% Recipe.find(recipe.id).comments.select('ratings').each do |comment|%>
         <%=comment.ratings%>
         <% end %>
         <br/>
-    </h5>
+    </h4>
  <%end%>
 
 
