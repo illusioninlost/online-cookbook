@@ -37,11 +37,13 @@ class UsersController < ApplicationController
   def personal
     @current_user = User.find(session[:user_id]) if session[:user_id]
     redirect_to root_path if @current_user == nil
-    @creations = @current_user.recipes
-    @creations.each do |recipe|
-    @ratings = recipe.id.comments
-    end
-    binding.pry
+    @recipes = @current_user.recipes
+  
+    #@recipes.each do |recipe|
+    #@comments = Recipe.find(recipe.id).comments.select('ratings')
+    #end
+    #binding.pry
+
   end
 
   private

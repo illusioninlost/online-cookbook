@@ -1,1 +1,15 @@
 <h1> Recipes and Ratings </h1>
+<br/>
+<br/>
+
+<h3>Your recipes:</h3>
+<% @recipes.each do |recipe| %>
+    <%= recipe.name %><br/>
+    <h5>All ratings:<%= Recipe.find(recipe.id).comments.select('ratings').ratings%></h5><br/>
+ <%end%>
+
+
+
+
+
+ <%= link_to "Back to home", root_path %>
