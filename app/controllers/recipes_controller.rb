@@ -62,6 +62,11 @@ class RecipesController < ApplicationController
     @sum = Recipe.average_ratings(@recipe)
   end
 
+  def fast
+    @fast = Recipe.fast
+ 
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(

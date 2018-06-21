@@ -2,3 +2,19 @@
 
 <hr>
 <br>
+
+<% @fast.each do |recipe| %>
+    <div class="structured">
+        <p class= "name">
+        <%= recipe.name.capitalize %>
+        </p>
+        <p class = "small">
+        <%= recipe.approximate_time %> minutes
+        </p>
+        <p class = "small">
+        Posted by: <%= recipe.creator %>
+    </div>
+    <%end %>
+<hr>
+<br>
+<%= link_to "Back", root_path %>
