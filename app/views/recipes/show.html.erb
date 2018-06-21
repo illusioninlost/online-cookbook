@@ -2,9 +2,9 @@
     <h1><%= @recipe.name %></h1><br>
   </div>
 
-  <div class="center">
+  <div class="center brown">
     <%= @recipe.approximate_time %><span> minutes to complete</span><br>
-    <%= @recipe.created_at.strftime("Posted at: %B %d, %Y") %>-<%= @recipe.creator %>
+    <%= @recipe.created_at.strftime("Posted at: %B %d, %Y") %> - <%= @recipe.creator %>
     <br>
 
   </div>
