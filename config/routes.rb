@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'sessions#create'
   get '/auth/github/callback', to: 'sessions#create'
   get '/personal', to: 'users#personal'
+  get '/fast', to: 'recipes#fast'
   resources :users, only: [:new,:create,:destroy]
   resources :recipes do
     resources :comments
