@@ -1,16 +1,17 @@
 
-<h1 class = "cente"> Recipes and Ratings </h1> 
+<h1 class = "cente bigger"> Recipes and Ratings </h1> 
 
 <br/>
 <br/>
 <hr/>
 <div class = "blue">
-<h2>Your recipes:</h2>
+<h2 id="black">Your recipes</h2>
 
 <% @recipes.each do |recipe| %>
     <h4><%= recipe.name.capitalize %><br/>
-        All ratings:<% Recipe.find(recipe.id).comments.select('ratings').each do |comment|%>
-            <%=comment.ratings%>,
+        All ratings:<% Recipe.find(recipe.id).comments.select('ratings').each_with_index do |comment,i|%>
+            <%=comment.ratings%>
+            <%= ',' if i < (Recipe.find(recipe.id).comments.select('ratings').size - 1) %>
         <% end %>
         <br/>
     </h4>
