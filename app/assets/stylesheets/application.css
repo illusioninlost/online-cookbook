@@ -114,8 +114,23 @@ div.brown{
 
 div.blue {
   color: rgb(0, 51, 153);
+  font-size: 1.2em;
 }
 
 .cente {
   text-align: center;
+}
+
+#black {
+  color:black;
+}
+
+.bigger {
+  display: inline-block;
+  font-size: 1.6em;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
 }
