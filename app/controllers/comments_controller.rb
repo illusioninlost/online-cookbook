@@ -12,7 +12,11 @@ class CommentsController < ApplicationController
     current_user = User.find_by(id: session[:user_id]) 
     end
     @recipe = Recipe.find_by(id: params[:recipe_id])
-    if (@comment = @recipe.comments.create(comments_params)).valid?
+    if current_user === nil
+      @comment = @recipe.comments.create(comments_params)
+      @comment.save
+      redirect_to recipe_path(@recipe)
+    elsif (@comment = @recipe.comments.create(comments_params)).valid?
       @comment.save
       current_user.comments.create(comments_params)
     redirect_to recipe_path(@recipe)
