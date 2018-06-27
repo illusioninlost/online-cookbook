@@ -40,6 +40,8 @@ class UsersController < ApplicationController
     redirect_to root_path 
    else
     @recipes = @current_user.recipes
+    @messages = @current_user.comments
+   
    end
     #@recipes.each do |recipe|
     #@comments = Recipe.find(recipe.id).comments.select('ratings')

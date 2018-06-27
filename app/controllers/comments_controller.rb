@@ -1,3 +1,4 @@
+require 'pry'
 class CommentsController < ApplicationController
 
   def new
@@ -6,9 +7,14 @@ class CommentsController < ApplicationController
   end
 
   def create
+   
+    if session[:user_id]
+    current_user = User.find_by(id: session[:user_id]) 
+    end
     @recipe = Recipe.find_by(id: params[:recipe_id])
     if (@comment = @recipe.comments.create(comments_params)).valid?
       @comment.save
+      current_user.comments.create(comments_params)
     redirect_to recipe_path(@recipe)
     else
       render 'new'
