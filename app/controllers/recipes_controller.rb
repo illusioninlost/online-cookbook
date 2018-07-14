@@ -64,7 +64,6 @@ class RecipesController < ApplicationController
 
   def fast
     @fast = Recipe.fast
- 
   end
 
   private

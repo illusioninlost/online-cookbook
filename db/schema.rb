@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_30_143223) do
+ActiveRecord::Schema.define(version: 2018_07_13_195743) do
+
+  create_table "caterers", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "password_confirmation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
@@ -29,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_143223) do
     t.integer "approximate_time"
     t.string "ingredients"
     t.integer "user_id"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

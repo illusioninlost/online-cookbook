@@ -8,6 +8,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.integer :approximate_time
       t.string :ingredients
       t.integer :user_id
+      t.string :phone_number
 
       t.timestamps
     end
