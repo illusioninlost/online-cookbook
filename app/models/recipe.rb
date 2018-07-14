@@ -3,6 +3,7 @@ require 'pry'
 class Recipe < ApplicationRecord
   scope :fast, -> {where("approximate_time < ?", 30)}
   belongs_to :user, optional: true
+  belongs_to :caterer
   has_many :comments
   validates :name, presence: true
   validates :creator, presence: true

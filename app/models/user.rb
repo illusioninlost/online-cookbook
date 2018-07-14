@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :recipes
+  has_many :caterers, :through => :recipes
   has_many :comments, :through => :recipes
   has_secure_password
   validates_confirmation_of :password
