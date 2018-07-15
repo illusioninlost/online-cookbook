@@ -74,7 +74,8 @@ class RecipesController < ApplicationController
     :notes,
     :special_tools,
     :approximate_time,
-    :ingredients
+    :ingredients,
+    :phone_number
     )
   end
 
