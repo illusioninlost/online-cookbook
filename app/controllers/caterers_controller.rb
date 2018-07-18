@@ -15,12 +15,13 @@ class CaterersController < ApplicationController
         end
       end
     
-      def login
+      def caterer_login
         session.delete("caterer_id") if session[:caterer_id]
+        render 'login'
       end
     
-      def in
-        @caterer = User.find_by(:username => params[:username])
+      def caterer_in
+        @caterer = Caterer.find_by(:username => params[:username])
         if @caterer && @caterer.authenticate(params[:password])
           session[:caterer_id]=@caterer.id
           redirect_to recipes_path
