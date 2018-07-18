@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
   def destroy
     session.delete("user_id")
+    session.delete("caterer_id")
     redirect_to recipes_path
   end
 

@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @current_user = User.find(session[:user_id]) if session[:user_id]
+    @current_user = Caterer.find(session[:caterer_id]) if session[:caterer_id]
     @say_hi = "Hi "
     if @current_user == nil
       @message = "Log in or sign up to add your own recipe"
