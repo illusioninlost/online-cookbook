@@ -38,10 +38,17 @@
       &nbsp;
       &nbsp;
        - <%= comment.name %>
+       <div class="">
+       <%= link_to 'show comment', recipe_comment_path(@recipe,comment)%>
+ 
+        </div>
+ 
     </p>
   <% end %>
 </div>
+
 <%= link_to "Add comment", new_recipe_comment_path(@recipe) %>
+
 
 <div class="">
   <br>
@@ -49,6 +56,9 @@
 <%= link_to 'Back', recipes_path %>
 </div>
 
+
 <div class="">
   <%= link_to 'Logout', logout_path %>
 </div>
+
+
