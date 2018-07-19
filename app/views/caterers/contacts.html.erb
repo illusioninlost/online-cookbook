@@ -1,0 +1,9 @@
+<h1> Recipes and contacts </h1>
+<ol>
+<% @recipes.each do |recipe|%>
+    <li>
+    <%=recipe.name.capitalize%> | 
+    <%=recipe.phone_number%>
+    </li>
+<%end%>
+</ol>

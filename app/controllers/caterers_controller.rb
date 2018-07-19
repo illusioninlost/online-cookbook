@@ -45,6 +45,15 @@ class CaterersController < ApplicationController
         redirect_to root_path
       end
 
+      def contacts
+        if session[:caterer_id]
+          current_user = Caterer.find_by(id: session[:caterer_id]) 
+          @recipes = current_user.recipes
+        else
+          redirect_to root_path
+        end
+      end
+
       private
       def caterer_params
         params.require(:caterer).permit(

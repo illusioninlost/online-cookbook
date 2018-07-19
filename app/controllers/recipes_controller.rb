@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
     if @current_user == nil
       @message = "Log in or sign up to add your own recipe"
     end
-    binding.pry
+    
   end
 
   def new

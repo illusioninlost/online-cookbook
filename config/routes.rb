@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/personal', to: 'users#personal'
   get '/fast', to: 'recipes#fast'
   post '/setup/:id', to: 'caterers#setup'
+  get '/contacts', to: 'caterers#contacts'
   resources :caterers, only: [:new,:create,:destroy]
   resources :users, only: [:new,:create,:destroy]
   resources :recipes do
