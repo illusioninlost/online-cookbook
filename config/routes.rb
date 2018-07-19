@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/auth/github/callback', to: 'sessions#create'
   get '/personal', to: 'users#personal'
   get '/fast', to: 'recipes#fast'
-  post '/setup/:id', to: 'caterers#setup'
+  get '/setup/:id', to: 'caterers#setup', as: 'setup'
   get '/contacts', to: 'caterers#contacts'
   resources :caterers, only: [:new,:create,:destroy]
   resources :users, only: [:new,:create,:destroy]

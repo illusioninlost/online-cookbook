@@ -18,8 +18,7 @@
 
 <div class="center">
  
-<%=form_tag(controller: "caterers", action: "setup/#{@recipe.id}", method: "post")%>
-<%= submit_tag("Add contact information(You need to be a caterer)") %>
+<%=link_to "Add contact information(You need to be a caterer)", setup_path(@recipe.id) %>
 </div>
 
 

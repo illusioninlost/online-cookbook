@@ -39,9 +39,9 @@ class CaterersController < ApplicationController
       def setup
         if session[:caterer_id]
         current_user = Caterer.find_by(id: session[:caterer_id]) 
-        end
         recipe = Recipe.find_by(id: params[:id])
         current_user.recipes.push(recipe)
+        end
         redirect_to root_path
       end
 
