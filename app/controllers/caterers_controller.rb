@@ -1,3 +1,4 @@
+require 'pry'
 class CaterersController < ApplicationController
 
     def new
@@ -33,6 +34,15 @@ class CaterersController < ApplicationController
       def destroy
         session.delete("caterer_id")
         redirect_to recipes_path
+      end
+
+      def setup
+        if session[:caterer_id]
+        current_user = Caterer.find_by(id: session[:caterer_id]) 
+        end
+        recipe = Recipe.find_by(id: params[:id])
+        current_user.recipes.push(recipe)
+        redirect_to root_path
       end
 
       private

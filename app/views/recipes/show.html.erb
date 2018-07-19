@@ -17,6 +17,13 @@
 </div>
 
 <div class="center">
+ 
+<%=form_tag(controller: "caterers", action: "setup", method: "post")%>
+<%= submit_tag("Add contact information(You need to be a caterer)") %>
+</div>
+
+
+<div class="center">
   <h3>Ratings: <%=@sum%>
   out 5 &#9733;</h3>
 </div>
